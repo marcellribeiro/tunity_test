@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tunity-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tunity-test
+  template:
+    metadata:
+      labels:
+        app: tunity-test
+    spec:
+      containers:
+        - name: tunity-test-container
+          image: marcellribeir0/tunity-test
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3000
