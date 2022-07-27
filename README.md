@@ -12,17 +12,17 @@ The solution should include all code, build, and k8s related files in a dedicate
 ### Collatz Conjecture
 The Collatz conjecture is one of the most famous unsolved problems in mathematics. The conjecture asks whether repeating two simple arithmetic operations will eventually transform every positive integer into 1. It concerns sequences of integers in which each term is obtained from the previous term as follows: if the previous term is even, the next term is one half of the previous term. If the previous term is odd, the next term is 3 times the previous term plus 1. The conjecture is that these sequences always reach 1, no matter which positive integer is chosen to start the sequence. (Wikipedia)
 
-#USAGE
+# USAGE
 ## Start Minikube
 ```
 minikube start
 ```
-####Go to root project folder and type
+#### Go to root project folder and type
 ```
 kubectl create -f deployment.yaml
 kubectl get pods
 ```
-####Wait to status is Running
+#### Wait to status is Running
 ```
 NAME                           READY   STATUS    RESTARTS   AGE
 tunity-test-586bc84dbb-4f4xp   1/1     Running   0          78s
@@ -31,13 +31,13 @@ tunity-test-586bc84dbb-4f4xp   1/1     Running   0          78s
 &nbsp;
 &nbsp;
 
-###Running as WEB Service
+### Running as WEB Service
 
-####Expose ports
+#### Expose ports
 ```
 kubectl expose deployment tunity-test --type=NodePort --name=tunity-test-svc --target-port=3000
 ```
-####Get your url
+#### Get your url
 ```
 minikube service tunity-test-svc --url
 
@@ -56,7 +56,7 @@ For Example:
 &nbsp;
 &nbsp;
 
-###Running with your Terminal
+### Running with your Terminal
 Get your pod name
 ```
 kubectl get pods
